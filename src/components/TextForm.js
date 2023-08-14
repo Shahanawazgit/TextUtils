@@ -20,6 +20,12 @@ export default function TextForm(props) {
     props.showAlert("Copied to clipboard!", "success");
   };
 
+  const handleSpeechClick = () => {
+    const textValue = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(textValue);
+    props.showAlert("Speech is running", "success");
+  };
+
   const handleRemoveExtraSpaceClick = () => {
     let newText = text.replace(/\s+/g, " ").trim();
     setText(newText);
@@ -63,35 +69,42 @@ export default function TextForm(props) {
         </div>
         <button
           disabled={text.length === 0}
-          className="btn btn-primary mx-1 my-1"
+          className="btn btn-outline-primary mx-1 my-1"
           onClick={handleUpClick}
         >
           Convert to Uppercase
         </button>
         <button
           disabled={text.length === 0}
-          className="btn btn-primary mx-1 my-1"
+          className="btn btn-outline-primary mx-1 my-1"
           onClick={handleLoClick}
         >
           Convert to Lowercase
         </button>
         <button
           disabled={text.length === 0}
-          className="btn btn-primary mx-1 my-1"
+          className="btn btn-outline-primary mx-1 my-1"
           onClick={handleCopyClick}
         >
           Copy text
         </button>
         <button
           disabled={text.length === 0}
-          className="btn btn-primary mx-1 my-1"
+          className="btn btn-outline-primary mx-1 my-1"
+          onClick={handleSpeechClick}
+        >
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-outline-primary mx-1 my-1"
           onClick={handleRemoveExtraSpaceClick}
         >
           Remove Extra Spaces
         </button>
         <button
           disabled={text.length === 0}
-          className="btn btn-primary mx-1 my-1"
+          className="btn btn-outline-primary mx-1 my-1"
           onClick={handleClearClick}
         >
           Clear text
