@@ -55,8 +55,10 @@ export default function TextForm(props) {
         <div className="mb-3">
           <textarea
             style={{
-              backgroundColor: props.mode === "dark" ? "#091e39" : "white",
+              backgroundColor: props.mode === "dark" ? "#091e39" : "#E7EEF7",
               color: props.mode === "dark" ? "white" : "black",
+              border:
+                props.mode === "dark" ? "1px solid #fff" : "1px solid #000",
             }}
             value={text}
             onChange={handleOnChange}
