@@ -27,7 +27,7 @@ function App() {
       showAlert("Dark mode enabled", "success");
     } else {
       setMode("light");
-      document.body.style.backgroundColor = "#ccdbee78";
+      document.body.style.background = "url('https://images.unsplash.com/photo-1526280524276-51b1c8a46321?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80')";
       showAlert("Light mode enabled", "success");
     }
   };
